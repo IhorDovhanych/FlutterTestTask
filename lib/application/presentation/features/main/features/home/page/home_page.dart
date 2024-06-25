@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_task/application/presentation/features/main/features/home/cubit/home_cubit.dart';
+import 'package:flutter_task/application/presentation/widgets/buttons/big_bottom_button.dart';
 import 'package:flutter_task/generated/l10n.dart';
 
 class HomePage extends StatefulWidget {
@@ -25,27 +26,41 @@ class _HomePageState extends State<HomePage> {
         ),
         backgroundColor: const Color.fromARGB(255, 61, 94, 170),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          context.read<HomeCubit>().countIncrement();
-        },
-        shape: const CircleBorder(side: BorderSide(color: Colors.transparent)),
-        backgroundColor: const Color.fromARGB(255, 61, 94, 170),
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
-      ),
       body: BlocBuilder<HomeCubit, HomeState>(
-        builder: (final context, final state) => Flex(
-          direction: Axis.horizontal,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Flex(
-                direction: Axis.vertical,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [Text(S.of(context).count), Text('${state.count}')])
-          ],
-        ),
-      ));
+          builder: (final context, final state) => Container(
+              margin: const EdgeInsets.only(right: 16, left: 16, top: 10),
+              child: Stack(children: [
+                Flex(
+                  direction: Axis.vertical,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Flex(
+                      direction: Axis.horizontal,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            S.of(context).set_valid_API_base,
+                            style: const TextStyle(fontSize: 16),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Flex(
+                      direction: Axis.horizontal,
+                      children: [
+                        Container(
+                            margin: const EdgeInsets.only(right: 10),
+                            child: const Icon(Icons.compare_arrows)),
+                        Expanded(
+                          child: TextField(
+                            decoration:
+                                InputDecoration(hintText: S.of(context).url),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                BigBottomButton(text: S.of(context).start_counting_process)
+              ]))));
 }

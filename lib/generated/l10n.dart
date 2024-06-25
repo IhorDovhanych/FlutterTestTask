@@ -79,6 +79,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Set valid API base URL in order to continue.`
+  String get set_valid_API_base {
+    return Intl.message(
+      'Set valid API base URL in order to continue.',
+      name: 'set_valid_API_base',
+      desc: 'TextField title',
+      args: [],
+    );
+  }
+
+  /// `URL`
+  String get url {
+    return Intl.message(
+      'URL',
+      name: 'url',
+      desc: 'URL text',
+      args: [],
+    );
+  }
+
+  /// `Start counting process`
+  String get start_counting_process {
+    return Intl.message(
+      'Start counting process',
+      name: 'start_counting_process',
+      desc: 'home_page button text',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

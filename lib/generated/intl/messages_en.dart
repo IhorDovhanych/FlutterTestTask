@@ -24,6 +24,11 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "app_name": MessageLookupByLibrary.simpleMessage("Flutter task"),
         "count": MessageLookupByLibrary.simpleMessage("Count"),
-        "home_page": MessageLookupByLibrary.simpleMessage("Home page")
+        "home_page": MessageLookupByLibrary.simpleMessage("Home page"),
+        "set_valid_API_base": MessageLookupByLibrary.simpleMessage(
+            "Set valid API base URL in order to continue."),
+        "start_counting_process":
+            MessageLookupByLibrary.simpleMessage("Start counting process"),
+        "url": MessageLookupByLibrary.simpleMessage("URL")
       };
 }

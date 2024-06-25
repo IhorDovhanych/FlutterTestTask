@@ -11,5 +11,17 @@
     "home_page": "Home page",
     "@home_page": {
         "description": "Title for home_page"
+    },
+    "set_valid_API_base": "Set valid API base URL in order to continue.",
+    "@set_valid_API_base": {
+        "description": "TextField title"
+    },
+    "url": "URL",
+    "@url": {
+        "description": "URL text"
+    },
+    "start_counting_process": "Start counting process",
+    "@start_counting_process": {
+        "description": "home_page button text"
     }
 }
