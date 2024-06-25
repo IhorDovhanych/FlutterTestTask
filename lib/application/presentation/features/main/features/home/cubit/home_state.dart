@@ -1,17 +1,17 @@
 part of 'home_cubit.dart';
 
 class HomeState extends Equatable {
-  const HomeState({this.count = 0});
+  const HomeState({this.url = ''});
 
-  final int count;
+  final String url;
 
   @override
-  List<Object?> get props => [count];
+  List<Object?> get props => [url];
 
   HomeState copyWith({
-    final int? count,
+    final String? url,
   }) =>
       HomeState(
-        count: count ?? this.count,
+        url: url ?? this.url,
       );
 }

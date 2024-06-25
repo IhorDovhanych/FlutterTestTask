@@ -1,7 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_task/application/presentation/features/main/features/home/cubit/home_cubit.dart';
+import 'package:flutter_task/application/presentation/router/router.gr.dart';
 import 'package:flutter_task/application/presentation/widgets/buttons/big_bottom_button.dart';
+import 'package:flutter_task/application/presentation/widgets/fields/custom_input_field.dart';
 import 'package:flutter_task/generated/l10n.dart';
 
 class HomePage extends StatefulWidget {
@@ -52,15 +55,24 @@ class _HomePageState extends State<HomePage> {
                             margin: const EdgeInsets.only(right: 10),
                             child: const Icon(Icons.compare_arrows)),
                         Expanded(
-                          child: TextField(
-                            decoration:
-                                InputDecoration(hintText: S.of(context).url),
-                          ),
-                        ),
+                          child: SizedBox(
+                            height: 50,
+                            child: CustomInputField(
+                              valueText: state.url,
+                              labelText: '',
+                              hintText: S.of(context).url,
+                              onTextChanged:
+                                  context.read<HomeCubit>().onChangeUrl),
+                        )),
                       ],
                     ),
                   ],
                 ),
-                BigBottomButton(text: S.of(context).start_counting_process)
+                BigBottomButton(
+                    text: S.of(context).start_counting_process,
+                    func: () async {
+                      await AutoRouter.of(context)
+                          .push(ProcessRoute(baseUrl: state.url));
+                    })
               ]))));
 }

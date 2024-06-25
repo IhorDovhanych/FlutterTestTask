@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "app_name": MessageLookupByLibrary.simpleMessage("Flutter task"),
         "count": MessageLookupByLibrary.simpleMessage("Count"),
         "home_page": MessageLookupByLibrary.simpleMessage("Home page"),
+        "process_page": MessageLookupByLibrary.simpleMessage("Process page"),
         "set_valid_API_base": MessageLookupByLibrary.simpleMessage(
             "Set valid API base URL in order to continue."),
         "start_counting_process":

@@ -23,5 +23,9 @@
     "start_counting_process": "Start counting process",
     "@start_counting_process": {
         "description": "home_page button text"
+    },
+    "process_page": "Process page",
+    "@process_page": {
+        "description": "title for process_page"
     }
 }

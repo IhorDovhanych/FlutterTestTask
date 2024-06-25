@@ -5,7 +5,6 @@ import 'package:flutter_task/application/di/injections.dart';
 import 'package:flutter_task/application/presentation/features/main/cubit/main_cubit.dart';
 import 'package:flutter_task/application/presentation/features/main/features/home/cubit/home_cubit.dart';
 import 'package:flutter_task/application/presentation/features/main/features/home/page/home_page.dart';
-
 class MainPage extends StatefulWidget implements AutoRouteWrapper {
   const MainPage({
     super.key,
@@ -59,7 +58,7 @@ class _MainPageState extends State<MainPage> {
             physics: const BouncingScrollPhysics(),
             controller: _pageController,
             children: const [
-              HomePage(),
+              HomePage()
             ],
           ),
         ),

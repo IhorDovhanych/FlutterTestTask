@@ -109,6 +109,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Process page`
+  String get process_page {
+    return Intl.message(
+      'Process page',
+      name: 'process_page',
+      desc: 'title for process_page',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
