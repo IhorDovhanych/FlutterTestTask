@@ -50,10 +50,10 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Proj base`
+  /// `Flutter task`
   String get app_name {
     return Intl.message(
-      'Proj base',
+      'Flutter task',
       name: 'app_name',
       desc: 'Application name',
       args: [],
@@ -66,6 +66,16 @@ class S {
       'Count',
       name: 'count',
       desc: 'Count title',
+      args: [],
+    );
+  }
+
+  /// `Home page`
+  String get home_page {
+    return Intl.message(
+      'Home page',
+      name: 'home_page',
+      desc: 'Title for home_page',
       args: [],
     );
   }

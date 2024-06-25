@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:proj_base/application/di/injections.dart';
-import 'package:proj_base/application/presentation/features/main/cubit/main_cubit.dart';
-import 'package:proj_base/application/presentation/features/main/features/home/cubit/home_cubit.dart';
-import 'package:proj_base/application/presentation/features/main/features/home/page/home_page.dart';
+import 'package:flutter_task/application/di/injections.dart';
+import 'package:flutter_task/application/presentation/features/main/cubit/main_cubit.dart';
+import 'package:flutter_task/application/presentation/features/main/features/home/cubit/home_cubit.dart';
+import 'package:flutter_task/application/presentation/features/main/features/home/page/home_page.dart';
 
 class MainPage extends StatefulWidget implements AutoRouteWrapper {
   const MainPage({

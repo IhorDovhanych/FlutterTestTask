@@ -1,11 +1,15 @@
 {
     "@@locale": "en",
-    "app_name": "Proj base",
+    "app_name": "Flutter task",
     "@app_name": {
         "description": "Application name"
     },
     "count": "Count",
     "@count": {
         "description": "Count title"
+    },
+    "home_page": "Home page",
+    "@home_page": {
+        "description": "Title for home_page"
     }
 }

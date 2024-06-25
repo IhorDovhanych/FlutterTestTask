@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:proj_base/core/cubit/cubit_base.dart';
+import 'package:flutter_task/core/cubit/cubit_base.dart';
 
 part 'home_state.dart';
 

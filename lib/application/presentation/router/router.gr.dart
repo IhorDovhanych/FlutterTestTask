@@ -13,9 +13,9 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i3;
 import 'package:flutter/material.dart' as _i4;
-import 'package:proj_base/application/presentation/features/main/page/main_page.dart'
+import 'package:flutter_task/application/presentation/features/main/page/main_page.dart'
     as _i2;
-import 'package:proj_base/application/presentation/initial_page.dart' as _i1;
+import 'package:flutter_task/application/presentation/initial_page.dart' as _i1;
 
 class AppRouter extends _i3.RootStackRouter {
   AppRouter([_i4.GlobalKey<_i4.NavigatorState>? navigatorKey])

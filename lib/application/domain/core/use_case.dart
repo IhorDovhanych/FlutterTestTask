@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:dartz/dartz.dart';
-import 'package:proj_base/core/error/base_exception.dart';
+import 'package:flutter_task/core/error/base_exception.dart';
 
 abstract class UseCase<Input, Output> {
   const UseCase();

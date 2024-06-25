@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:proj_base/application/presentation/features/main/page/main_page.dart';
-import 'package:proj_base/application/presentation/initial_page.dart';
+import 'package:flutter_task/application/presentation/features/main/page/main_page.dart';
+import 'package:flutter_task/application/presentation/initial_page.dart';
 
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page|Screen|BottomSheet,Route',

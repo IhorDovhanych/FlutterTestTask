@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:proj_base/core/extensions/string_x.dart';
+import 'package:flutter_task/core/extensions/string_x.dart';
 
 import 'base_exception.dart';
 import 'error_codes.dart';

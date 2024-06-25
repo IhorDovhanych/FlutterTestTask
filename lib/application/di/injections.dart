@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
-import 'package:proj_base/application/presentation/features/main/cubit/main_cubit.dart';
-import 'package:proj_base/application/presentation/features/main/features/home/cubit/home_cubit.dart';
+import 'package:flutter_task/application/presentation/features/main/cubit/main_cubit.dart';
+import 'package:flutter_task/application/presentation/features/main/features/home/cubit/home_cubit.dart';
 
 final getIt = GetIt.instance;
 
