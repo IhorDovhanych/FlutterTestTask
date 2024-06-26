@@ -75,7 +75,7 @@ class S {
     return Intl.message(
       'Home page',
       name: 'home_page',
-      desc: 'Title for home_page',
+      desc: 'AppBar title for home_page',
       args: [],
     );
   }
@@ -115,7 +115,47 @@ class S {
     return Intl.message(
       'Process page',
       name: 'process_page',
-      desc: 'title for process_page',
+      desc: 'AppBar title for process_page',
+      args: [],
+    );
+  }
+
+  /// `All calculations has finished, you can send your results to server`
+  String get all_calculations_has_finished {
+    return Intl.message(
+      'All calculations has finished, you can send your results to server',
+      name: 'all_calculations_has_finished',
+      desc: 'progress_page text after loading finished',
+      args: [],
+    );
+  }
+
+  /// `Send results to server`
+  String get send_results_to_server {
+    return Intl.message(
+      'Send results to server',
+      name: 'send_results_to_server',
+      desc: 'progress_page button text',
+      args: [],
+    );
+  }
+
+  /// `Result list page`
+  String get grid_list_page {
+    return Intl.message(
+      'Result list page',
+      name: 'grid_list_page',
+      desc: 'AppBar title for grid_list_page',
+      args: [],
+    );
+  }
+
+  /// `Preview page`
+  String get grid_detail_page {
+    return Intl.message(
+      'Preview page',
+      name: 'grid_detail_page',
+      desc: 'AppBar title for grid_detail_page',
       args: [],
     );
   }

@@ -22,10 +22,18 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "all_calculations_has_finished": MessageLookupByLibrary.simpleMessage(
+            "All calculations has finished, you can send your results to server"),
         "app_name": MessageLookupByLibrary.simpleMessage("Flutter task"),
         "count": MessageLookupByLibrary.simpleMessage("Count"),
+        "grid_detail_page":
+            MessageLookupByLibrary.simpleMessage("Preview page"),
+        "grid_list_page":
+            MessageLookupByLibrary.simpleMessage("Result list page"),
         "home_page": MessageLookupByLibrary.simpleMessage("Home page"),
         "process_page": MessageLookupByLibrary.simpleMessage("Process page"),
+        "send_results_to_server":
+            MessageLookupByLibrary.simpleMessage("Send results to server"),
         "set_valid_API_base": MessageLookupByLibrary.simpleMessage(
             "Set valid API base URL in order to continue."),
         "start_counting_process":

@@ -1,12 +1,19 @@
 import 'package:flutter_task/application/data/datasouces/grid_datasource.dart';
+import 'package:flutter_task/application/data/datasouces/grid_storage_datasource.dart';
 import 'package:flutter_task/application/data/repository/coordinate_repository.dart';
 import 'package:flutter_task/application/data/repository/grid_repository.dart';
+import 'package:flutter_task/application/data/repository/grid_storage_repository.dart';
 import 'package:flutter_task/application/data/services/coordinate_service.dart';
 import 'package:flutter_task/application/domain/repository/coordinate_repository.dart';
 import 'package:flutter_task/application/domain/repository/grid_repository.dart';
+import 'package:flutter_task/application/domain/repository/grid_storage_repository.dart';
 import 'package:flutter_task/application/domain/usecases/fetch_grids_use_case.dart';
+import 'package:flutter_task/application/domain/usecases/find_blocked_coordinates_use_case.dart';
 import 'package:flutter_task/application/domain/usecases/find_shortest_path_use_case.dart';
+import 'package:flutter_task/application/domain/usecases/grid_fetch_box_all_use_case.dart';
+import 'package:flutter_task/application/domain/usecases/grid_store_several_in_box_use_case.dart';
 import 'package:flutter_task/application/presentation/features/main/cubit/main_cubit.dart';
+import 'package:flutter_task/application/presentation/features/main/features/grid/cubit/grid_cubit.dart';
 import 'package:flutter_task/application/presentation/features/main/features/home/cubit/home_cubit.dart';
 import 'package:flutter_task/application/presentation/features/main/features/process/cubit/process_cubit.dart';
 import 'package:get_it/get_it.dart';
@@ -22,11 +29,16 @@ void _initAppScope(final GetIt getIt) {
 
   //region Data sources
   getIt.registerLazySingleton<GridDataSource>(() => GridDataSourceImpl());
+  getIt.registerLazySingleton<GridStorageDataSource>(
+      () => GridStorageDataSourceImpl());
+
   //endregion
 
   //region Repositories
   getIt.registerLazySingleton<GridRepository>(
       () => GridRepositoryImpl(getIt<GridDataSource>()));
+  getIt.registerLazySingleton<GridStorageRepository>(
+      () => GridStorageRepositoryImpl(getIt<GridStorageDataSource>()));
 
   getIt.registerLazySingleton<CoordinateRepository>(
       () => CoordinateRepositoryImpl(getIt<CoordinateService>()));
@@ -37,13 +49,25 @@ void _initAppScope(final GetIt getIt) {
       () => FetchGridsUseCase(getIt<GridRepository>()));
   getIt.registerFactory<FindShortestPathUseCase>(
       () => FindShortestPathUseCase(getIt<CoordinateRepository>()));
+  getIt.registerFactory<FindBlockedCoordinatesUseCase>(
+      () => FindBlockedCoordinatesUseCase(getIt<CoordinateRepository>()));
+
+  getIt.registerFactory<GridStoreSeveralInBoxUseCase>(
+      () => GridStoreSeveralInBoxUseCase(getIt<GridStorageRepository>()));
+  getIt.registerFactory<GridFetchBoxAllUseCase>(
+      () => GridFetchBoxAllUseCase(getIt<GridStorageRepository>()));
   //endregion
 
   //region Cubits
   getIt.registerFactory<MainCubit>(() => MainCubit());
   getIt.registerFactory<HomeCubit>(() => HomeCubit());
   getIt.registerFactory<ProcessCubit>(() => ProcessCubit(
-      getIt<FetchGridsUseCase>(), getIt<FindShortestPathUseCase>()));
+      getIt<FetchGridsUseCase>(),
+      getIt<FindShortestPathUseCase>(),
+      getIt<GridStoreSeveralInBoxUseCase>(),
+      getIt<GridFetchBoxAllUseCase>()));
+  getIt
+      .registerFactory(() => GridCubit(getIt<FindBlockedCoordinatesUseCase>()));
   //endregion
 }
 

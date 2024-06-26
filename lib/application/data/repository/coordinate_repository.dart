@@ -7,7 +7,7 @@ import 'package:flutter_task/core/error/base_exception.dart';
 import 'package:flutter_task/core/error/error_codes.dart';
 import 'package:flutter_task/core/utils/print_utils.dart';
 
-class CoordinateRepositoryImpl implements CoordinateRepository{
+class CoordinateRepositoryImpl implements CoordinateRepository {
   CoordinateRepositoryImpl(this._coordinateService);
 
   final CoordinateService _coordinateService;
@@ -28,6 +28,25 @@ class CoordinateRepositoryImpl implements CoordinateRepository{
       printError(message, e, st);
       return Left(
           BaseException(error: e, stack: st, code: ecNonDio, message: message));
+    }
+  }
+
+  @override
+  Either<BaseException, List<CoordinateEntity>> findBlockedCoordinates(
+      final List<String> field) {
+    {
+      try {
+        final coordinates = _coordinateService.findBlockedCoordinates(field);
+        final coordinatesEntities = coordinates
+            .map((final coordinatesModel) => coordinatesModel.toEntity)
+            .toList();
+        return Right(coordinatesEntities);
+      } catch (e, st) {
+        const message = 'Failed to findBlockedCoordinates';
+        printError(message, e, st);
+        return Left(BaseException(
+            error: e, stack: st, code: ecNonDio, message: message));
+      }
     }
   }
 }

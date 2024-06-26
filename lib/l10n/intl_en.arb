@@ -10,7 +10,7 @@
     },
     "home_page": "Home page",
     "@home_page": {
-        "description": "Title for home_page"
+        "description": "AppBar title for home_page"
     },
     "set_valid_API_base": "Set valid API base URL in order to continue.",
     "@set_valid_API_base": {
@@ -26,6 +26,22 @@
     },
     "process_page": "Process page",
     "@process_page": {
-        "description": "title for process_page"
+        "description": "AppBar title for process_page"
+    },
+    "all_calculations_has_finished": "All calculations has finished, you can send your results to server",
+    "@all_calculations_has_finished": {
+        "description": "progress_page text after loading finished"
+    },
+    "send_results_to_server": "Send results to server",
+    "@send_results_to_server": {
+        "description": "progress_page button text"
+    },
+    "grid_list_page": "Result list page",
+    "@grid_list_page": {
+        "description": "AppBar title for grid_list_page"
+    },
+    "grid_detail_page": "Preview page",
+    "@grid_detail_page": {
+        "description": "AppBar title for grid_detail_page"
     }
 }

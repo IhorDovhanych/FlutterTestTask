@@ -3,15 +3,15 @@ part of 'process_cubit.dart';
 class ProcessState extends Equatable {
   const ProcessState({
     required this.baseUrl,
-    this.grid,
-    this.coordinates,
+    this.gridList,
+    this.coordinates = const [],
     this.success = false,
     this.isLoading = false,
     this.error,
   });
 
   final String baseUrl;
-  final List<GridEntity>? grid;
+  final List<GridEntity>? gridList;
   final List<List<CoordinateEntity>>? coordinates;
   final bool success;
   final bool isLoading;
@@ -19,6 +19,9 @@ class ProcessState extends Equatable {
 
   @override
   List<Object?> get props => [
+        baseUrl,
+        gridList,
+        coordinates,
         success,
         isLoading,
         error,
@@ -26,7 +29,7 @@ class ProcessState extends Equatable {
 
   ProcessState copyWith({
     final String? baseUrl,
-    final List<GridEntity>? grid,
+    final List<GridEntity>? gridList,
     final List<List<CoordinateEntity>>? coordinates,
     final bool? success,
     final bool? isLoading,
@@ -34,7 +37,7 @@ class ProcessState extends Equatable {
   }) =>
       ProcessState(
         baseUrl: baseUrl ?? this.baseUrl,
-        grid: grid ?? this.grid,
+        gridList: gridList ?? this.gridList,
         coordinates: coordinates ?? this.coordinates,
         success: success ?? this.success,
         isLoading: isLoading ?? this.isLoading,

@@ -7,4 +7,6 @@ abstract class CoordinateRepository {
       final List<String> field,
       final CoordinateEntity start,
       final CoordinateEntity end);
+  Either<BaseException, List<CoordinateEntity>> findBlockedCoordinates(
+      final List<String> field);
 }

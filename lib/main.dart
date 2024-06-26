@@ -3,9 +3,12 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_task/application/di/injections.dart';
 import 'package:flutter_task/application/presentation/router/router.gr.dart';
 import 'package:flutter_task/generated/l10n.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter(); //local storage init
+  await Hive.openBox('testBox');
   await _provideBlocAndRunApp();
 }
 
